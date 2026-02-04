@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Performance - SalesForce Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">📊</span>
+                <span class="brand-name">Employee Analytics</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Dashboard</a></li>
+                <li><a href="employees.html" class="nav-item active">Employee Performance</a></li>
+                <li><a href="clients.html" class="nav-item">Client Analytics</a></li>
+                <li><a href="client-details.html" class="nav-item">Client Details</a></li>
+                <li><a href="conversions.html" class="nav-item">Conversions</a></li>
+                <li><a href="ratings.html" class="nav-item">Ratings</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+            </ul>
+            <div class="nav-user">
+                <span class="user-name">Admin User</span>
+                <div class="user-avatar">AU</div>
+            </div>
+            <button class="mobile-nav-toggle" id="mobileNavToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1 class="page-title">Employee Performance</h1>
+                    <p class="page-subtitle">Individual agent productivity and conversion metrics</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="performance-overview">
+                <div class="performance-grid" id="employeePerformanceGrid">
+                    <!-- Employee cards will be dynamically generated -->
+                </div>
+            </section>
+
+            <section class="charts-section">
+                <div class="chart-card wide">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Employee Performance Comparison</h3>
+                        <span class="chart-subtitle">Calls, conversions, and revenue by employee</span>
+                    </div>
+                    <div class="chart-container large">
+                        <canvas id="employeeComparisonChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <section class="charts-section">
+                <div class="chart-row">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Conversion Rate by Employee</h3>
+                            <span class="chart-subtitle">Individual conversion efficiency</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="conversionRateChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Revenue Contribution</h3>
+                            <span class="chart-subtitle">Revenue generated per employee</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="revenueContributionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">&copy; 2024 SalesForce Analytics. Enterprise Performance Management Platform.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

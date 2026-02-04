@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Analytics - SalesForce Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">📊</span>
+                <span class="brand-name">SalesForce Analytics</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Dashboard</a></li>
+                <li><a href="employees.html" class="nav-item">Employee Performance</a></li>
+                <li><a href="clients.html" class="nav-item active">Client Analytics</a></li>
+                <li><a href="client-details.html" class="nav-item">Client Details</a></li>
+                <li><a href="conversions.html" class="nav-item">Conversions</a></li>
+                <li><a href="ratings.html" class="nav-item">Ratings</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+            </ul>
+            <div class="nav-user">
+                <span class="user-name">Admin User</span>
+                <div class="user-avatar">AU</div>
+            </div>
+            <button class="mobile-nav-toggle" id="mobileNavToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1 class="page-title">Client Analytics</h1>
+                    <p class="page-subtitle">Client behavior insights and outcome distribution</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="kpi-section">
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-icon-large converted">✓</div>
+                        <div class="kpi-value" id="convertedClients">0</div>
+                        <div class="kpi-label">Converted Clients</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon-large pending">⏳</div>
+                        <div class="kpi-value" id="interestedClients">0</div>
+                        <div class="kpi-label">Interested (Pending)</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon-large declined">✗</div>
+                        <div class="kpi-value" id="notInterestedClientsCount">0</div>
+                        <div class="kpi-label">Not Interested</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon-large total">👥</div>
+                        <div class="kpi-value" id="totalClientsCount">0</div>
+                        <div class="kpi-label">Total Clients</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="charts-section">
+                <div class="chart-row">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Client Outcome Distribution</h3>
+                            <span class="chart-subtitle">Conversion funnel breakdown</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="clientOutcomeChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Satisfaction Score Trends</h3>
+                            <span class="chart-subtitle">Weekly satisfaction ratings</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="satisfactionTrendChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="segmentation-section">
+                <h2 class="section-title">Client Segmentation Analysis</h2>
+                <div class="segmentation-grid">
+                    <div class="segment-card">
+                        <h3 class="segment-title">High-Value Clients</h3>
+                        <div class="segment-stat">
+                            <span class="segment-number" id="highValueCount">0</span>
+                            <span class="segment-label">Clients contributing $10K+</span>
+                        </div>
+                        <div class="segment-bar">
+                            <div class="segment-fill" id="highValueBar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="segment-card">
+                        <h3 class="segment-title">Medium-Value Clients</h3>
+                        <div class="segment-stat">
+                            <span class="segment-number" id="mediumValueCount">0</span>
+                            <span class="segment-label">Clients contributing $5K-$10K</span>
+                        </div>
+                        <div class="segment-bar">
+                            <div class="segment-fill" id="mediumValueBar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="segment-card">
+                        <h3 class="segment-title">Entry-Level Clients</h3>
+                        <div class="segment-stat">
+                            <span class="segment-number" id="lowValueCount">0</span>
+                            <span class="segment-label">Clients contributing <$5K</span>
+                        </div>
+                        <div class="segment-bar">
+                            <div class="segment-fill" id="lowValueBar" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">&copy; 2024 SalesForce Analytics. Enterprise Performance Management Platform.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

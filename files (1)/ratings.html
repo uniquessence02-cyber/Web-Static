@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratings & Feedback - SalesForce Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">📊</span>
+                <span class="brand-name">SalesForce Analytics</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Dashboard</a></li>
+                <li><a href="employees.html" class="nav-item">Employee Performance</a></li>
+                <li><a href="clients.html" class="nav-item">Client Analytics</a></li>
+                <li><a href="client-details.html" class="nav-item">Client Details</a></li>
+                <li><a href="conversions.html" class="nav-item">Conversions</a></li>
+                <li><a href="ratings.html" class="nav-item active">Ratings</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+            </ul>
+            <div class="nav-user">
+                <span class="user-name">Admin User</span>
+                <div class="user-avatar">AU</div>
+            </div>
+            <button class="mobile-nav-toggle" id="mobileNavToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1 class="page-title">Ratings & Feedback</h1>
+                    <p class="page-subtitle">Client satisfaction and quality metrics</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="rating-overview">
+                <div class="rating-cards">
+                    <div class="rating-card company">
+                        <h3 class="rating-card-title">Company Rating</h3>
+                        <div class="rating-display">
+                            <div class="rating-value">4.6</div>
+                            <div class="rating-stars" id="companyStars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                        <div class="rating-subtitle">Based on 847 client reviews</div>
+                    </div>
+                    <div class="rating-card employees">
+                        <h3 class="rating-card-title">Employee Average</h3>
+                        <div class="rating-display">
+                            <div class="rating-value">4.4</div>
+                            <div class="rating-stars">⭐⭐⭐⭐☆</div>
+                        </div>
+                        <div class="rating-subtitle">Across all team members</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="employee-ratings">
+                <h2 class="section-title">Employee Ratings</h2>
+                <div class="employee-ratings-grid" id="employeeRatings">
+                    <!-- Employee rating cards will be generated dynamically -->
+                </div>
+            </section>
+
+            <section class="charts-section">
+                <div class="chart-row">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Rating Distribution</h3>
+                            <span class="chart-subtitle">Client rating breakdown</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="ratingDistributionChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Rating Trends</h3>
+                            <span class="chart-subtitle">Monthly rating evolution</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="ratingTrendsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="feedback-section">
+                <h2 class="section-title">Recent Client Feedback</h2>
+                <div class="feedback-list" id="feedbackList">
+                    <!-- Feedback items will be generated dynamically -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">&copy; 2024 SalesForce Analytics. Enterprise Performance Management Platform.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

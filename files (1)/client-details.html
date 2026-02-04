@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Details - SalesForce Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">📊</span>
+                <span class="brand-name">SalesForce Analytics</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item">Dashboard</a></li>
+                <li><a href="employees.html" class="nav-item">Employee Performance</a></li>
+                <li><a href="clients.html" class="nav-item">Client Analytics</a></li>
+                <li><a href="client-details.html" class="nav-item active">Client Details</a></li>
+                <li><a href="conversions.html" class="nav-item">Conversions</a></li>
+                <li><a href="ratings.html" class="nav-item">Ratings</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+            </ul>
+            <div class="nav-user">
+                <span class="user-name">Admin User</span>
+                <div class="user-avatar">AU</div>
+            </div>
+            <button class="mobile-nav-toggle" id="mobileNavToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1 class="page-title">Client Details</h1>
+                    <p class="page-subtitle">Individual client profiles and interaction history</p>
+                </div>
+                <div class="header-actions">
+                    <input type="text" class="search-input" id="clientSearch" placeholder="Search clients...">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="client-table-section">
+                <div class="table-container">
+                    <table class="data-table" id="clientTable">
+                        <thead>
+                            <tr>
+                                <th>Client ID</th>
+                                <th>Client Name</th>
+                                <th>Assigned Employee</th>
+                                <th>Calls Made</th>
+                                <th>Status</th>
+                                <th>Revenue</th>
+                                <th>Satisfaction</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clientTableBody">
+                            <!-- Rows will be dynamically generated -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">&copy; 2024 SalesForce Analytics. Enterprise Performance Management Platform.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

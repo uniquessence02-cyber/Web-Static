@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Enterprise Client & Sales Performance Management Platform">
+    <title>Executive Dashboard - SalesForce Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">📊</span>
+                <span class="brand-name">SalesForce Analytics</span>
+            </div>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-item active">Dashboard</a></li>
+                <li><a href="employees.html" class="nav-item">Employee Performance</a></li>
+                <li><a href="clients.html" class="nav-item">Client Analytics</a></li>
+                <li><a href="client-details.html" class="nav-item">Client Details</a></li>
+                <li><a href="conversions.html" class="nav-item">Conversions</a></li>
+                <li><a href="ratings.html" class="nav-item">Ratings</a></li>
+                <li><a href="about.html" class="nav-item">About</a></li>
+            </ul>
+            
+            <div class="nav-user">
+                <span class="user-name">Admin User</span>
+                <div class="user-avatar">AU</div>
+            </div>
+            
+            <button class="mobile-nav-toggle" id="mobileNavToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1 class="page-title">Executive Dashboard</h1>
+                    <p class="page-subtitle">Real-time sales performance and client intelligence overview</p>
+                </div>
+                <div class="header-actions">
+                    <select class="time-filter" id="timeFilter">
+                        <option value="daily">Today</option>
+                        <option value="weekly" selected>This Week</option>
+                        <option value="monthly">This Month</option>
+                        <option value="quarterly">This Quarter</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Key Performance Indicators -->
+            <section class="kpi-section">
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-icon calls">📞</span>
+                            <span class="kpi-trend positive">+12.5%</span>
+                        </div>
+                        <div class="kpi-value" id="totalCalls">0</div>
+                        <div class="kpi-label">Total Calls Made</div>
+                        <div class="kpi-subtext">This week</div>
+                    </div>
+                    
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-icon revenue">💰</span>
+                            <span class="kpi-trend positive">+8.3%</span>
+                        </div>
+                        <div class="kpi-value" id="totalRevenue">$0</div>
+                        <div class="kpi-label">Total Revenue</div>
+                        <div class="kpi-subtext">Generated this period</div>
+                    </div>
+                    
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-icon conversion">✓</span>
+                            <span class="kpi-trend positive">+3.2%</span>
+                        </div>
+                        <div class="kpi-value" id="conversionRate">0%</div>
+                        <div class="kpi-label">Conversion Rate</div>
+                        <div class="kpi-subtext">Calls to closed deals</div>
+                    </div>
+                    
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-icon satisfaction">😊</span>
+                            <span class="kpi-trend neutral">+0.2%</span>
+                        </div>
+                        <div class="kpi-value" id="satisfactionRate">0%</div>
+                        <div class="kpi-label">Client Satisfaction</div>
+                        <div class="kpi-subtext">Overall rating score</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Row 1 -->
+            <section class="charts-section">
+                <div class="chart-row">
+                    <div class="chart-card wide">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Calls vs Conversions Trend</h3>
+                            <span class="chart-subtitle">7-day performance comparison</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="callsConversionsChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Client Status Distribution</h3>
+                            <span class="chart-subtitle">Current breakdown</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="clientStatusChart"></canvas>
+                        </div>
+                        <div class="chart-legend" id="statusLegend"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Row 2 -->
+            <section class="charts-section">
+                <div class="chart-row">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Revenue by Day</h3>
+                            <span class="chart-subtitle">Weekly revenue performance</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3 class="chart-title">Client Satisfaction Levels</h3>
+                            <span class="chart-subtitle">Satisfaction vs dissatisfaction</span>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="satisfactionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Top Performers Section -->
+            <section class="performers-section">
+                <div class="section-header">
+                    <h2 class="section-title">Top Performing Employees</h2>
+                    <a href="employees.html" class="section-link">View All →</a>
+                </div>
+                
+                <div class="performers-grid" id="topPerformers">
+                    <!-- Top performers will be dynamically generated -->
+                </div>
+            </section>
+
+            <!-- Client Insights Summary -->
+            <section class="insights-section">
+                <div class="section-header">
+                    <h2 class="section-title">Client Insights Summary</h2>
+                </div>
+                
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <div class="insight-metric">
+                            <span class="insight-number" id="satisfiedClients">0</span>
+                            <span class="insight-label">Satisfied Clients</span>
+                        </div>
+                        <div class="insight-percentage positive" id="satisfiedPercent">0%</div>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <div class="insight-metric">
+                            <span class="insight-number" id="notSatisfiedClients">0</span>
+                            <span class="insight-label">Not Satisfied</span>
+                        </div>
+                        <div class="insight-percentage negative" id="notSatisfiedPercent">0%</div>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <div class="insight-metric">
+                            <span class="insight-number" id="notInterestedClients">0</span>
+                            <span class="insight-label">Not Interested</span>
+                        </div>
+                        <div class="insight-percentage neutral" id="notInterestedPercent">0%</div>
+                    </div>
+                    
+                    <div class="insight-card">
+                        <div class="insight-metric">
+                            <span class="insight-number" id="pendingClients">0</span>
+                            <span class="insight-label">Pending Follow-up</span>
+                        </div>
+                        <div class="insight-percentage neutral" id="pendingPercent">0%</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">&copy; 2024 SalesForce Analytics. Enterprise Performance Management Platform.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
